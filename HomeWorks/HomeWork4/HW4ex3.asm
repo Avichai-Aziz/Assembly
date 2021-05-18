@@ -6,9 +6,9 @@
 .MODEL	SMALL
 .STACK	20
 .DATA
-	num 	     db	 6, ?, 6 dup('$')
-	new_line 	 db  0DH, 0AH, '$'
-    val          db  ?
+	num 	     	db	6, ?, 6 dup('$')
+	new_line 	db  	0DH, 0AH, '$'
+    	val          	db  	?
 
 .CODE
 	start:    
