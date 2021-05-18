@@ -8,8 +8,8 @@
 .MODEL SMALL
 .STACK	64
 .DATA
-a 			dw 	20, 5, 12, 0, -2, 3, 300, 10, 4, 1  ; size 10
-b			dw 	2, 3, 4, 5, 2, 2, 2, 2, 2, 2 		; size 10
+a 		dw 	20, 5, 12, 0, -2, 3, 300, 10, 4, 1  ; size 10
+b		dw 	2, 3, 4, 5, 2, 2, 2, 2, 2, 2 	; size 10
 mulArray 	dw	10 dup (?)
 qArray	 	dw	10 dup (?)
 rArray 		dw	10 dup (?)
@@ -22,25 +22,25 @@ start:
 	lea	si, a
 	lea	di, b
 	lea	bp, mulArray
-	mov	cx, 10 		; loop 10 times
+	mov	cx, 10 	; loop 10 times
 	
     calc: ;calculation
 		; mulArray
 		mov 	ax, [si]
-		mov		bx, [di]
-		imul		bx
-		mov		ds:[bp], ax
+		mov	bx, [di]
+		imul	bx
+		mov	ds:[bp], ax
 		; qArray
 		mov 	ax, [si]
-		mov		bx, [di]
+		mov	bx, [di]
 		idiv	bx
-		mov		ds:[bp+20], ax ; move the bp register pointer to the next array - qArray
+		mov	ds:[bp+20], ax ; move the bp register pointer to the next array - qArray
 		; rArray
-		mov		ds:[bp+40], dx ; same as above - rArray, the modulo enter to the dx register
+		mov	ds:[bp+40], dx ; same as above - rArray, the modulo enter to the dx register
 		; promoting the addresses of all the pointer registers by 2
-     	add		si, 2
-		add 	di, 2
-     	add		bp, 2
+     	add	si, 2
+	add 	di, 2
+     	add	bp, 2
      	loop	calc
 	
 	;end the program
