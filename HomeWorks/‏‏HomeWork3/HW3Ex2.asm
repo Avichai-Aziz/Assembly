@@ -4,10 +4,10 @@
 .MODEL SMALL
 .STACK	64
 .DATA
-num		dw	1234
+num	dw	1234
 revnum	dw	0
-var		dw	0
-ten		dw	10
+var	dw	0
+ten	dw	10
 
 .CODE
 start:
@@ -15,24 +15,24 @@ start:
 	mov	ds, ax
 	
 	mov 	ax, num ; num = 1234
-	mov		cx, 3 	; loop 3 times
+	mov	cx, 3 	; loop 3 times
 	
     rev: ;reverse
 		mov 	dx, 0
 		div 	ten
 		
-		add		revnum, dx 	; add the remainder
-		mov		var, ax
+		add	revnum, dx 	; add the remainder
+		mov	var, ax
 		
-		mov		ax, revnum 	; revnum = 4
+		mov	ax, revnum 	; revnum = 4
 		
-		mul		ten
-		mov		revnum, ax 	; revnum = 40
+		mul	ten
+		mov	revnum, ax 	; revnum = 40
 		mov 	ax, var		; var = 123
      	
 		loop	rev
 		
-		add revnum, ax ; ax = 1
+		add 	revnum, ax ; ax = 1
 		; revnum = 4321
 	
 	;end the program
