@@ -8,9 +8,9 @@
 .STACK	20
 .DATA
 	string 	    db	50, ? , 50 dup('$')
-    ok          db  "Currect input", '$'
-    error       db  "Error, string must have exactly one '@'", '$'
-    new_line    db  0DH, 0AH, '$' 
+    	ok          db  "Currect input", '$'
+    	error       db  "Error, string must have exactly one '@'", '$'
+    	new_line    db  0DH, 0AH, '$' 
 
 
 .CODE
@@ -38,7 +38,7 @@
 	mov	al, 0
 	int	21H
 
-    ; ; print new line
+    ; print new line
     PROC_NEW_LINE PROC
         mov ah, 9
         lea dx, new_line
